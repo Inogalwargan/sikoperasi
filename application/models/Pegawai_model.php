@@ -46,10 +46,10 @@ class Pegawai_model extends CI_Model
 	public function save(){
 		$post = $this->input->post();
 		$this->id_pegawai = uniqid();
-		$this->name = $post["nik"];
-		$this->name = $post["nama"];
-		$this->name = $post["alamat"];
-		$this->name = $post["nohp"];
+		$this->nik = $post["nik"];
+		$this->nama = $post["nama"];
+		$this->alamat = $post["alamat"];
+		$this->nohp = $post["nohp"];
 		$this->db->insert($this->_table, $this);
 	}
 

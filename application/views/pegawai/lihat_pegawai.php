@@ -28,7 +28,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <a href="Pegawai_controller/add" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
+              <a href="<?php echo base_url('Pegawai_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
               <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
               <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
             </div>
@@ -37,6 +37,7 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                  <th>No</th>
                   <th>NIK</th>
                   <th>Nama</th>
                   <th>Alamat</th>
@@ -44,8 +45,10 @@
                 </tr>
                 </thead>
                 <tbody>
+                  <?php $no = 1;?>
                   <?php foreach ($pegawai as $value): ?>
                 <tr>
+                  <td><?php echo $no++; ?></td>
                   <td><?php echo $value->nik ?></td>
                   <td><?php echo $value->nama ?></td>
                   <td><?php echo $value->alamat ?></td>

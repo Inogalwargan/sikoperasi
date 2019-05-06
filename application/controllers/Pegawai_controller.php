@@ -5,19 +5,19 @@ class Pegawai_controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("pegawai_model");
+        $this->load->model("Pegawai_model");
         $this->load->library('form_validation');
     }
 
     public function index()
     {
-        $data["pegawai"] = $this->pegawai_model->getAll();
+        $data["pegawai"] = $this->Pegawai_model->getAll();
         $this->load->view("pegawai/lihat_pegawai", $data);
     }
 
     public function add()
     {
-        $pegawai = $this->pegawai_model;
+        $pegawai = $this->Pegawai_model;
         $validation = $this->form_validation;
         $validation->set_rules($pegawai->rules());
 

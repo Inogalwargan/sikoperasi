@@ -13,6 +13,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <?php if ($this->session->flashdata('success')): ?>
+      <div class="alert alert-success" role="alert">
+        <?php echo $this->session->flashdata('success'); ?>
+        <a href="<?php echo base_url('Pegawai_controller/index') ?>">Ok</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+      </div>
+    <?php endif; ?>
+
     <section class="content-header">
       <h1>
         Kelola
@@ -24,6 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href="<?php echo base_url('Pegawai_controller/add') ?>">Tambah Data Pegawai</a></li>
       </ol>
     </section>
+    
 
     <!-- Main content -->
     <section class="content">
@@ -37,29 +47,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action="<?php echo base_url('Pegawai_controller/add') ?>" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label>NIK</label>
-                  <input type="text" class="form-control" placeholder="Masukan NIK">
+                  <input name="nik" class="form-control <?php echo form_error('nik') ? 'is-invalid':'' ?>" placeholder="Masukan NIK" type="text"/>
+                  <div class="invalid-feedback">
+                    <?php echo form_error('alamat') ?>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Nama</label>
-                  <input type="text" class="form-control" placeholder="Masukan Nama">
+                  <label>Nama</label>
+                  <input name="nama" class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>" placeholder="Masukan Nama" type="text">
+                  <div class="invalid-feedback">
+                    <?php echo form_error('nama') ?>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Alamat</label>
-                  <input type="text" class="form-control" placeholder="Masukan Alamat">
+                  <label>Alamat</label>
+                  <input name="alamat" class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>" placeholder="Masukan Alamat" type="text"/>
+                  <div class="invalid-feedback">
+                    <?php echo form_error('alamat')?>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">No Hp</label>
-                  <input type="number" class="form-control" placeholder="Masukan No Hp">
+                  <label>No Hp</label>
+                  <input name="nohp" class="form-control <?php echo form_error('nohp') ? 'is-invalid':'' ?>" placeholder="Masukan No HP" type="text"/>
+                  <div class="invalid-feedback">
+                    <?php echo form_error('nohp') ?>
+                  </div>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input class="btn btn-success" type="submit" value="Simpan" />
               </div>
             </form>
           </div>
