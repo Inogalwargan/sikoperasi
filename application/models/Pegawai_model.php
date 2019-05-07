@@ -31,7 +31,7 @@ class Pegawai_model extends CI_Model
 
 			['field' => 'nohp',
 			'label' => 'nohp',
-			'rules' => 'numeric']
+			'rules' => 'required|numeric|max_length[15]']
 		];
 	}
 
@@ -53,17 +53,36 @@ class Pegawai_model extends CI_Model
 		$this->db->insert($this->_table, $this);
 	}
 
-	public function update(){
-		$post = $this->input->post();
-		$this->id_pegawai = $post["id"];
-		$this->nik = $post["nik"];
-		$this->nama = $post["alamat"];
-		$this->nohp = $post["nohp"];
-		$this->db->update($this->_table, $this, array('id_pegawai' => $post['id']));
+	// public function update(){
+	// 	$post = $this->input->post();
+	// 	$this->id_pegawai = $post["id"];
+	// 	$this->nik = $post["nik"];
+	// 	$this->nama = $post["alamat"];
+	// 	$this->nohp = $post["nohp"];
+	// 	$this->db->update($this->_table, $this, array('id_pegawai' => $post['id']));
+	// }
+
+	// public function delete($id){
+	// 	return $this->db->delete($this->_table, array('id_pegawai' =>$post['id']));
+	// }
+
+	// Fungsi untuk melakukan ubah data siswa berdasarkan NIS siswa
+	public function update($id){
+		$data = array(
+			"nik" => $this->input->post('nik'),
+			"nama" => $this->input->post('nama'),
+			"alamat" => $this->input->post('alamat'),
+			"nohp" => $this->input->post('nohp')
+		);
+
+		$this->db->where('id_pegawai', $id);
+	    $this->db->update('pegawai', $data); // Untuk mengeksekusi perintah update data
 	}
 
+	// Fungsi untuk melakukan menghapus data siswa berdasarkan NIS siswa
 	public function delete($id){
-		return $this->db->delete($this->_table, array('id_pegawai' =>$post['id']));
+		$this->db->where('id_pegawai', $id);
+    $this->db->delete('pegawai'); // Untuk mengeksekusi perintah delete data
 	}
 }
 

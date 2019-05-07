@@ -23,37 +23,32 @@ class Pegawai_controller extends CI_Controller
 
         if ($validation->run()) {
             $pegawai->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('success', 'Tambah Pegawai '.$pegawai->nama.' Berhasil Disimpan');
+            redirect('Pegawai_controller/index');
         }
 
         $this->load->view("pegawai/tambah_pegawai");
     }
 
-    public function edit($id = null)
-    {
-        if (!isset($id)) redirect('admin/products');
-       
-        $product = $this->product_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+    public function edit($id){
 
-        if ($validation->run()) {
-            $product->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+    	$pegawai = $this->Pegawai_model; //object model
+        $validation = $this->form_validation; //object validasi
+        $validation->set_rules($pegawai->rules()); //terapkan rules di Pegawai_model.php
+
+        if ($validation->run()) { //lakukan validasi form
+            $pegawai->update($id); // update data
+            $this->session->set_flashdata('success', 'Data Pegawai '.$pegawai->getById($id)->nama.' Berhasil Diubah');
+            redirect('Pegawai_controller/index');
         }
 
-        $data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
-        
-        $this->load->view("admin/product/edit_form", $data);
+        $data['pegawai'] = $this->Pegawai_model->getById($id);
+        $this->load->view('pegawai/edit_pegawai', $data);
     }
 
-    public function delete($id=null)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->product_model->delete($id)) {
-            redirect(site_url('admin/products'));
-        }
-    }
+    public function delete($id){
+	    $this->Pegawai_model->delete($id); // Panggil fungsi delete() yang ada di SiswaModel.php
+	    $this->session->set_flashdata('success', 'Data Pegawai Berhasil Dihapus');
+	    redirect('Pegawai_controller/index');
+	}
 }

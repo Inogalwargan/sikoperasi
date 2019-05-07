@@ -32,6 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <link rel="stylesheet" href="<?php echo base_url('assetAdmin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'); ?>" rel="stylesheet">
    <!-- DataTables -->
    <link rel="stylesheet" href="<?php echo base_url('assetAdmin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>">
+  <!-- Google Font -->
+   <link rel="stylesheet" href="<?php echo base_url('assetAdmin/plugins/google-fonts/google-font.css'); ?>" rel="stylesheet">
 
    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,8 +42,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<!-- Google Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 <style type="text/css">
 
 .btn-tosca {
@@ -67,7 +67,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   color: white;
   font-family: arial;
 }
+
+.btn-emerald {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+  text-align: center;
+  color: white;
+  font-family: arial;
 }
+
+.btn-pomerganate {
+  background-color: #e55039;
+  border-color: #e55039;
+  text-align: center;
+  color: white;
+  font-family: arial;
+}
+
+.btn-ref {
+  background-color: #079992;
+  border-color: #079992;
+  text-align: center;
+  color: white;
+  font-family: arial;
+}
+
+.btn-mandarin {
+  background-color: #e55039;
+  border-color: #e55039;
+  text-align: center;
+  color: white;
+  font-family: arial;
+}
+
 </style>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
