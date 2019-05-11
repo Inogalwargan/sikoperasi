@@ -13,23 +13,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php if ($this->session->flashdata('success')): ?>
-      <div class="alert alert-success" role="alert">
-        <?php echo $this->session->flashdata('success'); ?>
-        <a href="<?php echo base_url('Pegawai_controller/index') ?>">Ok</a>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-      </div>
-    <?php endif; ?>
+
+
+    <!-- Alert -->
+      <?php if ($this->session->flashdata('success')): ?>
+        <div class="box-body">
+          <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-info"></i>Alert!</h4>
+            <?php echo $this->session->flashdata('success'); ?><br>
+            <a href="<?php echo base_url('Anggota_controller/detail/'.$pasangan->id_anggota) ?>">Saya Mengerti</a>
+          </div>
+        </div>
+      <?php endif; ?>
+      <!-- Alert -->
 
     <section class="content-header">
       <h1>
         Kelola
-        <small>Data Anggota</small>
+        <small>Data Anak</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-fw fa-child"></i> Anggota</a></li>
         <li><a href="<?php echo base_url('Anggota_controller/index') ?>">Lihat Data Anggota</a></li>
+        <li><a href="<?php echo base_url('Anggota_controller/detail/'.$pasangan->id_anggota) ?>">Lihat Data Detail</a></li>
         <li><a href="">Edit Data Anggota</a></li>
       </ol>
     </section>
@@ -47,49 +54,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="<?php echo base_url('Anggota_controller/edit/'.$anggota->id_anggota) ?>" method="post">
-              <input type="hidden" name="id_anggota" value="<?php echo $anggota->id_anggota?>" />
+            <form role="form" action="<?php echo base_url('Pasangan_controller/edit/'.$pasangan->id_pasangan) ?>" method="post">
+              <input type="hidden" name="id_anggota" value="<?php echo $pasangan->id_anggota?>" />
+
               <div class="box-body">
                 <div class="form-group">
-                  <label>NIA</label>
-                  <input name="nia" class="form-control <?php echo form_error('nia') ? 'is-invalid':'' ?>" placeholder="Masukan NIA" value="<?php echo $anggota->nia?>" type="text"/>
+                  <label>Nama Pasangan</label>
+                  <input name="nama_pasangan" class="form-control <?php echo form_error('nama_pasangan') ? 'is-invalid':'' ?>" placeholder="Masukan Nama Pasangan" value="<?php echo $pasangan->nama_pasangan?>" type="text"/>
                   <div class="invalid-feedback">
-                    <?php echo form_error('alamat') ?>
+                    <?php echo form_error('nama_pasangan') ?>
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Nama</label>
-                  <input name="nama" class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>" placeholder="Masukan Nama" value="<?php echo $anggota->nama?>" type="text">
+                  <label>Pekerjaan</label>
+                  <input name="pekerjaan" class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>" placeholder="Masukan Pekerjaan" value="<?php echo $pasangan->pekerjaan?>" type="text"/>
                   <div class="invalid-feedback">
-                    <?php echo form_error('nama') ?>
+                    <?php echo form_error('pekerjaan')?>
                   </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Jenis Kelamin</label>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" <?php if ($anggota->jenis_kelamin == 'Laki-Laki') {
-                          echo "checked";
-                        } ?> class="<?php echo form_error('jenis_kelamin') ? 'is-invalid':'' ?>" name="jenis_kelamin" value="Laki-Laki" checked="">
-                        Laki-Laki
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" <?php if ($anggota->jenis_kelamin == 'Perempuan') {
-                          echo "checked";
-                        } ?> class="<?php echo form_error('jenis_kelamin') ? 'is-invalid':'' ?>" name="jenis_kelamin" value="Perempuan">
-                        Perempuan
-                      </label>
-                    </div>
-                  </div>
 
                 <div class="form-group">
                   <label>Alamat</label>
-                  <input name="alamat" class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>" placeholder="Masukan Alamat" value="<?php echo $anggota->alamat?>" type="text"/>
+                  <textarea name="alamat" class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>" placeholder="Masukan Alamat" type="text"><?php echo $pasangan->alamat?></textarea>
                   <div class="invalid-feedback">
-                    <?php echo form_error('alamat')?>
+                    <?php echo form_error('pekerjaan')?>
                   </div>
                 </div>
               </div>

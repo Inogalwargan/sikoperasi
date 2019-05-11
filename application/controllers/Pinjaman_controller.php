@@ -1,10 +1,10 @@
 <?php 
 
-Class c_anggota extends CI_Controller {
+Class Pinjaman_controller extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('anggota/lihat_anggota');
+		$this->load->view('pinjaman/lihat_pinjaman');
 	}
 
 	public function add(){

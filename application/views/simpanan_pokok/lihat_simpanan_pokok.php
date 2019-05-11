@@ -69,11 +69,8 @@
                         <td><?php cetak($value->jenis_kelamin)  ?></td>
                         <td><?php cetak($value->alamat)  ?></td>
                         <td>
-                          <a class="btn btn-ref" href="<?php echo site_url('Anggota_controller/edit/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-edit"></i>Edit</a>
-                          <a href="#!" onclick="deleteConfirm('<?php echo site_url('Anggota_controller/delete/'.$value->id_anggota) ?>')" class="btn btn-mandarin"><i class="fa fa-fw fa-trash"></i>Hapus</a>
-                          <a class="btn btn-primary" href="<?php echo site_url('Anak_controller/form_add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Anak</a>
-                          <a class="btn btn-primary" href="<?php echo site_url('Pasangan_controller/form_add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Pasangan</a>
-                          <a class="btn btn-warning" href="<?php echo site_url('Anggota_controller/detail/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-users"></i>Detail</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('SimpananPokok_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Pokok</a>
+                          <a class="btn btn-success" href="<?php echo site_url('SimpananPokok_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Pokok</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

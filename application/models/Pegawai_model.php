@@ -52,21 +52,7 @@ class Pegawai_model extends CI_Model
 		$this->nohp = $post["nohp"];
 		$this->db->insert($this->_table, $this);
 	}
-
-	// public function update(){
-	// 	$post = $this->input->post();
-	// 	$this->id_pegawai = $post["id"];
-	// 	$this->nik = $post["nik"];
-	// 	$this->nama = $post["alamat"];
-	// 	$this->nohp = $post["nohp"];
-	// 	$this->db->update($this->_table, $this, array('id_pegawai' => $post['id']));
-	// }
-
-	// public function delete($id){
-	// 	return $this->db->delete($this->_table, array('id_pegawai' =>$post['id']));
-	// }
-
-	// Fungsi untuk melakukan ubah data siswa berdasarkan NIS siswa
+	
 	public function update($id){
 		$data = array(
 			"nik" => $this->input->post('nik'),

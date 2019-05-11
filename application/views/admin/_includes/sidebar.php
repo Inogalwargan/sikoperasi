@@ -31,11 +31,7 @@
 
         <li><a href="<?php echo base_url('') ?>"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
         <li><a href="<?php echo base_url('Pegawai_controller') ?>"><i class="fa fa-fw fa-user-plus"></i> <span>Pegawai</span></a>
-        <li><a href="<?php echo base_url('c_anggota') ?>"><i class="fa fa-fw fa-child"></i> <span>Anggota</span></a>
-        </li>
-        <li><a href="<?php echo base_url('c_pinjaman') ?>"><i class="fa fa-fw fa-money"></i> <span>Pinjaman</span></a>
-        </li>
-        <li><a href="<?php echo base_url('c_angsuran') ?>"><i class="fa fa-fw fa-map-o"></i> <span>Angsuran</span></a>
+        <li><a href="<?php echo base_url('Anggota_controller') ?>"><i class="fa fa-fw fa-child"></i> <span>Anggota</span></a>
         </li>
         <li class="treeview">
           <a href="#">
@@ -45,12 +41,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Simpanan Pokok</a></li>
+            <li><a href="<?php echo base_url('SimpananPokok_controller') ?>"><i class="fa fa-circle-o"></i>Simpanan Pokok</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i>Simpanan Wajib</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i>Simpanan Sukarela</a></li>
           </ul>
         </li>
-
+        <li><a href="<?php echo base_url('Pinjaman_controller') ?>"><i class="fa fa-fw fa-money"></i> <span>Pinjaman</span></a>
+        </li>
+        <li><a href="<?php echo base_url('Angsuran_controller') ?>"><i class="fa fa-fw fa-map-o"></i> <span>Angsuran</span></a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
