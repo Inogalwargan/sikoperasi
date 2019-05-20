@@ -73,8 +73,13 @@
                       </tr>
                     <?php endforeach; ?>
                   </tbody>
-                  
                 </table>
+                <div class="box-header">
+                  <?php foreach ($tot as $nilai): ?>
+                  <h3 class="label label-success"> Total Simpanan Pokok Anda : <?php echo "Rp. " . (number_format($nilai->jumlah,2,',','.')) ?></h3>
+                  <?php endforeach; ?>
+                  
+                </div>
               </div>
               
               <!-- /.box-body -->

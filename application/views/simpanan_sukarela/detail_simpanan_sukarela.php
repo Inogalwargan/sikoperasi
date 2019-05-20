@@ -31,7 +31,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-fw fa-child"></i> Anggota</a></li>
-          <li><a href="#">Lihat Data Anggota</a></li>
+          <li><a href="<?php echo base_url('SimpananSukarela_controller') ?>">Lihat Data Anggota</a></li>
         </ol>
       </section>
 
@@ -41,52 +41,49 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <div class="box-header">
-                <a href="<?php echo base_url('Anggota_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
-                <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
-              </div>
               <!-- /.box-header -->
-              <div class="box-body table-responsive">
-                <table id="example1" class="table table-bordered table-hover">
+            <div class="box-body table-responsive">
+              <div class="box-header">
+                <h3 class="label label-primary" style="font-size: 12px, margin-right: -20px !important;">--- Detail Simpanan Sukarela ---</h3>
+              </div>
+                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>NIK</th>
-                      <th>Nama</th>
+                      <th>NIA</th>
+                      <th>Nama Anggota</th>
                       <th>Jenis Kelamin</th>
-                      <th>Alamat</th>
+                      <th>Jumlah</th>
+                      <th>Tanggal Dibayarkan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php $no = 1;?>
-                    <?php foreach ($anggota as $value): ?>
+                    <?php foreach ($simpanan_sukarela as $nilai): ?>
                       <tr>
                         <td><?php cetak($no++) ?></td>
-                        <td><?php cetak($value->nia)  ?></td>
-                        <td><?php cetak($value->nama ) ?></td>
-                        <td><?php cetak($value->jenis_kelamin)  ?></td>
-                        <td><?php cetak($value->alamat)  ?></td>
+                        <td><?php cetak($nilai->nia) ?></td>
+                        <td><?php cetak($nilai->nama) ?></td>
+                        <td><?php cetak($nilai->jenis_kelamin) ?></td>
+                        <td><?php echo "Rp. " . (number_format($nilai->jumlah,2,',','.')) ?></td>
+                        <td><?php cetak($nilai->tanggal_dibayar ) ?></td>
                         <td>
-                          <a class="btn btn-primary" href="<?php echo site_url('SimpananPokok_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Pokok</a>
-                          <a class="btn btn-success" href="<?php echo site_url('SimpananPokok_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Pokok</a>
+                          <a class="btn btn-ref" href="<?php echo site_url('SimpananSukarela_controller/edit/'.$nilai->id_simpanan_sukarela) ?>"><i class="fa fa-fw fa-edit"></i>Edit</a>
+                         <a href="#!" onclick="deleteConfirm('<?php echo site_url('SimpananSukarela_controller/delete/'.$nilai->id_simpanan_sukarela) ?>')" class="btn btn-mandarin"><i class="fa fa-fw fa-trash"></i>Hapus</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>No</th>
-                      <th>NIK</th>
-                      <th>Nama</th>
-                      <th>Jenis Kelamin</th>
-                      <th>Alamat</th>
-                      <th>Aksi</th>
-                    </tr>
-                  </tfoot>
                 </table>
+                <div class="box-header">
+                  <?php foreach ($tot as $nilai): ?>
+                  <h3 class="label label-success"> Total Simpanan Wajib Anda : <?php echo "Rp. " . (number_format($nilai->jumlah,2,',','.')) ?></h3>
+                  <?php endforeach; ?>
+                  
+                </div>
               </div>
+              
               <!-- /.box-body -->
             </div>
             <!-- /.box -->

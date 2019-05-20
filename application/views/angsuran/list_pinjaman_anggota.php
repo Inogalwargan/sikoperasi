@@ -27,11 +27,11 @@
       <section class="content-header">
         <h1>
           Kelola
-          <small>Data Anggota Koperasi</small>
+          <small>Data Angsuran Pinjaman Anggota</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-fw fa-child"></i> Anggota</a></li>
-          <li><a href="#">Lihat Data Anggota</a></li>
+          <li><a href="<?php  echo base_url('Angsuran_controller') ?>"><i class="fa fa-fw fa-money"></i> Lihat Angsuran</a></li>
+          <li><a href="#">Data Pinjaman Anggota</a></li>
         </ol>
       </section>
 
@@ -41,11 +41,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <div class="box-header">
-                <a href="<?php echo base_url('Anggota_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
-                <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
-              </div>
+              <!--  -->
               <!-- /.box-header -->
               <div class="box-body table-responsive">
                 <table id="example1" class="table table-bordered table-hover">
@@ -54,23 +50,22 @@
                       <th>No</th>
                       <th>NIK</th>
                       <th>Nama</th>
-                      <th>Jenis Kelamin</th>
-                      <th>Alamat</th>
+                      <th>No Transaksi Pinjaman</th>
+                      <th>Jumlah Pinjaman</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php $no = 1;?>
-                    <?php foreach ($anggota as $value): ?>
+                    <?php foreach ($pinjaman_anggota as $value): ?>
                       <tr>
                         <td><?php cetak($no++) ?></td>
                         <td><?php cetak($value->nia)  ?></td>
                         <td><?php cetak($value->nama ) ?></td>
-                        <td><?php cetak($value->jenis_kelamin)  ?></td>
-                        <td><?php cetak($value->alamat)  ?></td>
+                        <td><?php cetak($value->no_pinjaman)  ?></td>
+                        <td><?php cetak($value->jumlah_pinjaman)  ?></td>
                         <td>
-                          <a class="btn btn-primary" href="<?php echo site_url('SimpananPokok_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Pokok</a>
-                          <a class="btn btn-success" href="<?php echo site_url('SimpananPokok_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Pokok</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('Angsuran_controller/add/'.$value->id_pinjaman) ?>"><i class="fa fa-fw fa-plus"></i>Angsuran</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

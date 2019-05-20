@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i>Alert!</h4>
             <?php echo $this->session->flashdata('success'); ?><br>
-            <a href="<?php echo base_url('Anggota_controller/detail/'.$pasangan->id_anggota) ?>">Saya Mengerti</a>
+            <a href="<?php echo base_url('SimpananSukarela_controller/detail/'.$simpanan_sukarela->id_anggota) ?>">Saya Mengerti</a>
           </div>
         </div>
       <?php endif; ?>
@@ -31,11 +31,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <section class="content-header">
       <h1>
         Kelola
-        <small>Data Angsuran</small>
+        <small>Data Anak</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="<?php echo base_url('Angsuran_controller/') ?>"><i class="fa fa-fw fa-child"></i>Lihat Data Angsuran</a></li>
-        <li><a href="#">Tambah Angsuran</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-child"></i> Anggota</a></li>
+        <li><a href="<?php echo base_url('SimpananSukarela_controller/index') ?>">Lihat Anggota</a></li>
+        <li><a href="<?php echo base_url('SimpananSukarela_controller/detail/'.$simpanan_sukarela->id_anggota) ?>">Lihat Detail Simpanan Pokok Anggota</a></li>
+        <li><a href="">Edit Data Anggota</a></li>
       </ol>
     </section>
     
@@ -52,23 +54,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="<?php echo base_url('Angsuran_controller/add/'.$angsuran->id_pinjaman) ?>" method="post">
-              <input type="hidden" name="id_pinjaman" value="<?php echo $angsuran->id_pinjaman?>" />
+            <form role="form" action="<?php echo base_url('SimpananSukarela_controller/edit/'.$simpanan_sukarela->id_simpanan_sukarela) ?>" method="post">
+              <input type="hidden" name="id_anggota" value="<?php echo $simpanan_sukarela->id_anggota?>" />
 
               <div class="box-body">
                 <div class="form-group">
-                  <label>No Angsuran</label>
-                  <input name="no_angsuran" class="form-control <?php echo form_error('no_angsuran') ? 'is-invalid':'' ?>" placeholder="Masukan No Angsuran" type="text"/>
+                  <label>Jumlah</label>
+                  <input name="jumlah" class="form-control <?php echo form_error('jumlah') ? 'is-invalid':'' ?>" placeholder="Masukan Nama Pasangan" value="<?php echo $simpanan_sukarela->jumlah?>" type="text"/>
                   <div class="invalid-feedback">
-                    <?php echo form_error('no_angsuran') ?>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label>Jumlah Angsuran</label>
-                  <input name="jumlah_angsuran" class="form-control <?php echo form_error('jumlah_angsuran') ? 'is-invalid':'' ?>" placeholder="Masukan Jumlah Angsuran Tanpa (.)" type="text"/>
-                  <div class="invalid-feedback">
-                    <?php echo form_error('jumlah_angsuran') ?>
+                    <?php echo form_error('jumlah') ?>
                   </div>
                 </div>
               </div>
@@ -103,4 +97,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- page script -->
 </body>
 </html>
-  

@@ -37,6 +37,33 @@ class SimpananPokok_model extends CI_Model
         return $query->result();
 	}
 
+	public function total_simpanan_pokok($id){
+		$this->db->select_sum('s.jumlah');
+        $this->db->from('simpanan_pokok as s');
+        $this->db->join('anggota as a', 's.id_anggota = a.id_anggota');
+        $this->db->where('a.id_anggota', $id);
+        $query = $this->db->get();
+        return $query->result();
+	}
+
+		// public function detail_simpanan_pokokall(){
+		// 	$this->db->select('*');
+	 //        $this->db->from('simpanan_pokok');
+	 //        $this->db->join('anggota', 'simpanan_pokok.id_anggota = anggota.id_anggota');
+	 //        // $this->db->where('anggota.id_anggota', $id);
+	 //        $query = $this->db->get();
+	 //        return $query->result();
+		// }
+
+		// public function detail_simpanan_pokok2($id){
+		// 	$this->db->select('*');
+	 //        $this->db->from('simpanan_pokok');
+	 //        $this->db->join('anggota', 'simpanan_pokok.id_anggota = anggota.id_anggota');
+	 //        $this->db->where('simpanan_pokok.id_simpanan_pokok', $id);
+	 //        $query = $this->db->get();
+	 //        return $query->result();
+		// }
+
 	public function detail_pasangan($id){
 		$this->db->select('*');
         $this->db->from('pasangan');

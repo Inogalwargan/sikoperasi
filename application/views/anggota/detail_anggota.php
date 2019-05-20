@@ -41,11 +41,6 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <div class="box-header">
-                <a href="<?php echo base_url('Anggota_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
-                <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
-              </div>
               <!-- /.box-header -->
               <div class="box-body table-responsive">
                <div class="box-header">

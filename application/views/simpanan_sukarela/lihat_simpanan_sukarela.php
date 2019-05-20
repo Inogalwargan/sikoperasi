@@ -69,8 +69,8 @@
                         <td><?php cetak($value->jenis_kelamin)  ?></td>
                         <td><?php cetak($value->alamat)  ?></td>
                         <td>
-                          <a class="btn btn-primary" href="<?php echo site_url('SimpananPokok_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Pokok</a>
-                          <a class="btn btn-success" href="<?php echo site_url('SimpananPokok_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Pokok</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('SimpananSukarela_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Sukarela</a>
+                          <a class="btn btn-success" href="<?php echo site_url('SimpananSukarela_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Sukarela</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

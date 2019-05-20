@@ -30,8 +30,8 @@
           <small>Data Anggota Koperasi</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-fw fa-child"></i> Anggota</a></li>
-          <li><a href="#">Lihat Data Anggota</a></li>
+          <li><a href="<?php  echo base_url('Pinjaman_controller') ?>"><i class="fa fa-fw fa-money"></i> Lihat Pinjaman</a></li>
+          <li><a href="#">Data Anggota</a></li>
         </ol>
       </section>
 
@@ -41,11 +41,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
-              <div class="box-header">
-                <a href="<?php echo base_url('Anggota_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
-                <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
-              </div>
+              <!--  -->
               <!-- /.box-header -->
               <div class="box-body table-responsive">
                 <table id="example1" class="table table-bordered table-hover">
@@ -69,8 +65,7 @@
                         <td><?php cetak($value->jenis_kelamin)  ?></td>
                         <td><?php cetak($value->alamat)  ?></td>
                         <td>
-                          <a class="btn btn-primary" href="<?php echo site_url('SimpananPokok_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Simpanan Pokok</a>
-                          <a class="btn btn-success" href="<?php echo site_url('SimpananPokok_controller/detail/'.$value->id_anggota) ?>"></i>Detail Simpanan Pokok</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('Pinjaman_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-plus"></i>Pinjaman</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

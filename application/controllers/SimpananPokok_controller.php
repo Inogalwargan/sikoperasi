@@ -21,8 +21,9 @@ class SimpananPokok_controller extends CI_Controller
     }
 
     public function detail($id){
+        // $data['anggota'] = $this->SimpananPokok_model->detail_simpanan_pokokall();
+        $data['tot'] = $this->SimpananPokok_model->total_simpanan_pokok($id);
         $data['simpanan_pokok'] = $this->SimpananPokok_model->detail_simpanan_pokok($id);
-
         $this->load->view("simpanan_pokok/detail_simpanan_pokok", $data);
     }
 
@@ -54,9 +55,7 @@ class SimpananPokok_controller extends CI_Controller
             redirect($_SERVER ['HTTP_REFERER']);
 
         }
-        $data['anggota'] = $this->Anggota_model->getById($id);
         $data['simpanan_pokok'] = $this->SimpananPokok_model->getById($id);
-        // print_r($data['anggota']);
         $this->load->view('simpanan_pokok/edit_simpanan_pokok', $data);
     }
 
