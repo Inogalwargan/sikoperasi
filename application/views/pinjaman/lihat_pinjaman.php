@@ -75,7 +75,6 @@
                         <td>
                           <a class="btn btn-ref" href="<?php echo site_url('Pinjaman_controller/edit/'.$value->id_pinjaman) ?>"><i class="fa fa-fw fa-edit"></i></a>
                           <a href="#!" onclick="deleteConfirm('<?php echo site_url('Pinjaman_controller/delete/'.$value->id_pinjaman) ?>')" class="btn btn-mandarin"><i class="fa fa-fw fa-trash"></i></a>
-                          <a class="btn btn-emerald" href="<?php echo site_url('SimpananWajib_controller/add/'.$value->id_anggota) ?>"><i class="fa fa-fw fa-info"></i></a><br><br>
                           
                         </td>
                       </tr>

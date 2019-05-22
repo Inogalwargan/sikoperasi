@@ -43,8 +43,8 @@
             <div class="box">
               <div class="box-header">
                 <a href="<?php echo base_url('Anggota_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
-                <button class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</button>
+                <a href="<?php echo base_url("Anggota_controller/export"); ?>"  class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</a>
+                <a  class="btn btn-ijo"><i class="fa fa-fw fa-upload"></i>Import Data</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body table-responsive">

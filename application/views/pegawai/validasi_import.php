@@ -32,7 +32,7 @@
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-fw fa-user-plus"></i> Pegawai</a></li>
-				<li><a href="#">Lihat Data Pegawai</a></li>
+				<li><a href="<?php echo base_url('Pegawai_controller')?>">Lihat Data Pegawai</a></li>
 			</ol>
 		</section>
 
@@ -51,6 +51,7 @@
 								</div>
 								<div class="form-group">
 									<input class="btn btn-success" type="submit" name="preview" value="Preview">
+									<a class="btn btn-carot" href="<?php echo base_url("excel/format.xlsx"); ?>">Download Format</a>
 								</div>
 							</form>
 						</div>
@@ -67,15 +68,15 @@
 								echo "<form method='post' action='" . base_url("Pegawai_controller/import") . "'>";
 								echo "<div class=\"box-body table-responsive\">";
 								echo "<table id='example1' class='table table-bordered table-hover'>
-    <tr>
-      <th colspan='5'>Preview Data</th>
-    </tr>
-    <tr>
-      <th>NIK</th>
-      <th>Nama</th>
-      <th>Alamat</th>
-      <th>No HP</th>
-    </tr>";
+									<tr>
+									  <th colspan='5'>Preview Data</th>
+									</tr>
+									<tr>
+									  <th>NIK</th>
+									  <th>Nama</th>
+									  <th>Alamat</th>
+									  <th>No HP</th>
+									</tr>";
 
 								$numrow = 1;
 								$kosong = 0;

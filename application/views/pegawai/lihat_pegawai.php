@@ -43,7 +43,7 @@
               <div class="box">
                 <div class="box-header">
                   <a href="<?php echo base_url('Pegawai_controller/add') ?>" class="btn btn-tosca"><i class="fa fa-fw fa-plus"></i>Tambah</a>
-                  <button class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</button>
+                  <a href="<?php echo base_url("Pegawai_controller/export"); ?>" class="btn btn-carot"><i class="fa fa-fw fa-download"></i>Export Data</a>
                   <a class="btn btn-ijo" href="<?php echo base_url("Pegawai_controller/form"); ?>"><i class="fa fa-fw fa-upload"></i>Import Data</a>
                 </div>
                 <!-- /.box-header -->
