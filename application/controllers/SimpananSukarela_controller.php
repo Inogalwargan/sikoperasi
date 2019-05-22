@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class SimpananSukarela_controller extends CI_Controller
+class SimpananSukarela_controller extends MY_Controller
 {
     public function __construct()
     {

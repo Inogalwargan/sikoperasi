@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pegawai_controller extends CI_Controller
+class Pegawai_controller extends MY_Controller
 {
     public function __construct()
     {

@@ -4,7 +4,7 @@
 * author inogalwargan
 */
 
-class SimpananPokok_controller extends CI_Controller
+class SimpananPokok_controller extends MY_Controller
 {
     public function __construct()
     {

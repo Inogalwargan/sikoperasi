@@ -4,7 +4,7 @@
 * author inogalwargan
 */
 
-class Pinjaman_controller extends CI_Controller
+class Pinjaman_controller extends MY_Controller
 {
     public function __construct()
     {

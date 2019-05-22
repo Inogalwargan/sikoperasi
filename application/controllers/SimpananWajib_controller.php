@@ -4,7 +4,7 @@
 * author inogalwargan
 */
 
-class SimpananWajib_controller extends CI_Controller
+class SimpananWajib_controller extends MY_Controller
 {
     public function __construct()
     {

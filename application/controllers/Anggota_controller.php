@@ -4,7 +4,7 @@
 * author inogalwargan
 */
 
-class Anggota_controller extends CI_Controller
+class Anggota_controller extends MY_Controller
 {
     public function __construct()
     {

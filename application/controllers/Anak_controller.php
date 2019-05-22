@@ -4,7 +4,7 @@
 * author inogalwargan
 */
 
-class Anak_controller extends CI_Controller
+class Anak_controller extends MY_Controller
 {
     public function __construct()
     {
@@ -47,24 +47,24 @@ class Anak_controller extends CI_Controller
     $jenjang_sekolah = $_POST['jenjang_sekolah']; // Ambil data alamat dan masukkan ke variabel alamat
     $nama_sekolah = $_POST['nama_sekolah'];
     $data = array();
-    
+
     $index = 0; // Set index array awal dengan 0
     foreach($id_anggota as $data_anak){ // Kita buat perulangan berdasarkan nis sampai data terakhir
       array_push($data, array(
           // Ambil dan set data telepon sesuai index array dari $index
         'id_anggota'=>$data_anak,
         'nama_anak'=>$nama_anak[$index],// Ambil dan set data nama sesuai index array dari $index
-        'jenjang_sekolah'=>$jenjang_sekolah[$index], 
+        'jenjang_sekolah'=>$jenjang_sekolah[$index],
         'nama_sekolah'=>$nama_sekolah[$index],  // Ambil dan set data alamat sesuai index array dari $index
     ));
-      
+
       $index++;
   }
 
         $sql = $this->Anak_model->save_batch($data);
-    
+
         if($sql){ // Jika sukses
-            $this->session->set_flashdata('success', 'Tambah Anak '.$data['nama_anak'].' Berhasil Disimpan'); 
+            $this->session->set_flashdata('success', 'Tambah Anak '.$data['nama_anak'].' Berhasil Disimpan');
             redirect('Anggota_controller/index');
         }else{ // Jika gagal
           echo "<script>alert('Data gagal disimpan');window.location = '".base_url('Anggota_controller/index')."';</script>";
