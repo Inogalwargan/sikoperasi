@@ -21,3 +21,5 @@ Sikoperasi di kembangankan menggunakan framwork Codeigniter dan database MySQL.
 12. Rekap data simpan, pinjam berbentuk .pdf
 
 - Link Demo : https://sikoma.000webhostapp.com/
+	Username : admin
+	Password : admin
