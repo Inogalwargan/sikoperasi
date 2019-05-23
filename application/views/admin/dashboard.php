@@ -7,6 +7,17 @@
 <?php $this->load->view("admin/_includes/sidebar.php") ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+	  <!-- Alert -->
+	  <?php if ($this->session->flashdata('success')): ?>
+		  <div class="box-body">
+			  <div class="alert alert-info alert-dismissible">
+				  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				  <h4><i class="icon fa fa-info"></i>Alert!</h4>
+				  <?php echo $this->session->flashdata('success'); ?>
+			  </div>
+		  </div>
+	  <?php endif; ?>
+	  <!-- Alert -->
     <!-- Content Header (Page header) -->
     <section class="content-header">
 

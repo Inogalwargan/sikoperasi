@@ -54,23 +54,57 @@
 	<div class="login-box-body">
 		<p class="login-box-msg">Sign in to start the sistem</p>
 
-		<form action="<?php echo base_url('Auth/login')?>" method="post">
+		<form action="<?php echo base_url('Auth/add')?>" method="post">
 			<div class="form-group has-feedback">
 				<input type="Username" class="form-control" placeholder="Username" name="username">
 				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				<div class="invalid-feedback">
+					<?php echo form_error('username') ?>
+				</div>
 			</div>
 			<div class="form-group has-feedback">
 				<input type="password" class="form-control" placeholder="Password" name="password">
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+				<div class="invalid-feedback">
+					<?php echo form_error('password') ?>
+				</div>
 			</div>
+			<div class="form-group has-feedback">
+				<input name="nama" class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>" placeholder="Masukan Nama" type="text">
+				<div class="invalid-feedback">
+					<?php echo form_error('nama') ?>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Jenis Kelamin</label>
+				<div class="radio">
+					<label>
+						<input type="radio" class="<?php echo form_error('jenis_kelamin') ? 'is-invalid':'' ?>" name="jenis_kelamin" value="Laki-Laki" checked="">
+						Laki-Laki
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" class="<?php echo form_error('jenis_kelamin') ? 'is-invalid':'' ?>" name="jenis_kelamin" value="Perempuan">
+						Perempuan
+					</label>
+				</div>
+			</div>
+			<div class="form-group has-feedback">
+				<input name="nohp" class="form-control <?php echo form_error('nohp') ? 'is-invalid':'' ?>" placeholder="Masukan Nomor HP / Telphone" type="text">
+				<div class="invalid-feedback">
+					<?php echo form_error('nohp') ?>
+				</div>
+			</div>
+
 			<div class="row">
 				<!-- /.col -->
 				<div class="col-xs-4">
-					<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+					<button type="submit" class="btn btn-primary">
+						<span class="fa fa-plus"></span> Sign Up</button>
 				</div>
 				<div class="col-xs-4 pull-right">
-					<a href="<?php echo  base_url('Auth/add')?>" class="btn btn-success">
-						<span class="fa fa-plus"></span> Register</a>
+					<a href="<?php echo  base_url('Auth')?>" class="btn btn-warning">Kembali</a>
 				</div>
 				<!-- /.col -->
 			</div>
