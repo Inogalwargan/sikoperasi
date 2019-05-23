@@ -1,6 +1,8 @@
 # sikoperasi
 - About Sikoperasi : 
-Sikoperasi di kembangankan menggunakan framwork Codeigniter dan database MySQL.
+1. Sikoperasi di kembangankan menggunakan framwork Codeigniter dan MySQL.
+2. Sikoperasi di kembangkan dengan menggunakan template adminlte (sumber : https://adminlte.io)
+
 
 - Rules Sikoperasi : 
 1. Admin : bertugas mengelola data sikoperasi.
