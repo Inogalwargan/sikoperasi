@@ -25,6 +25,7 @@ class Auth extends CI_Controller {
 		$username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
 		$password = ($this->input->post('password'));
 		$user = $this->User_model->get($username); // Panggil fungsi get yang ada di UserModel.php
+
 		if ($validation->run()) {
 			$register->save();
 			$username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
