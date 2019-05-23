@@ -19,3 +19,5 @@ Sikoperasi di kembangankan menggunakan framwork Codeigniter dan database MySQL.
 10. Setelah mendapat total pinjaman + bunga yang telah diperoleh sistem akan otomatis menghitung jumlah pembayaran tiap bulan yang harus dibayarkan oleh peminjam tergantung kesepakan berapa banyak angsuran yang telah disepakati.
 11. CRUD (Create, Read, Update, Delete) data berita.
 12. Rekap data simpan, pinjam berbentuk .pdf
+
+- Link Demo : https://sikoma.000webhostapp.com/
